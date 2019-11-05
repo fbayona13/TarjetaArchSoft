@@ -18,11 +18,12 @@ public class TransaccionController {
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@RequestMapping(value = "/transaccion", method = RequestMethod.POST, produces = "application/json")
-	public ResponseEntity<?> crearUsuario(@RequestBody TransaccionDto dto) throws Exception {
+	public ResponseEntity<?> addTransaccion(@RequestBody TransaccionDto dto) throws Exception {
 
-		transaccionService.cargaSaldo(TransaccionDto);
+		transaccionService.addTransaccion(dto);
 
 		return new ResponseEntity(dto, HttpStatus.CREATED);
 	}
+	
 	
 }
