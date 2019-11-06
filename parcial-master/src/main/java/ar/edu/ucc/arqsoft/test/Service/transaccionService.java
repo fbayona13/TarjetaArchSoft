@@ -30,7 +30,29 @@ public class transaccionService {
 		TransaccionDao.saveOrUpdate(transaccion);
 		
 		log.info("se cargo la transaccion");
+	}
 		
+	public TransaccionDto GetTransaccionById (Long id) {
+		Transaccion transaccion = TransaccionDao.load(id);
+		
+		TransaccionDto dto = new TransaccionDto();
+		
+		dto.setMonto(transaccion.getMonto());
+		dto.setId(transaccion.getId());
+		
+		return dto;
 		
 	}	
+	// me parece que tengo que hacer el service primero de la tarjeta para ver el saldo 
+	// despues identarlo con este service o lo levanto en la tarjeta??
+	public void PedidoUtilizacion (Long monto) {
+		Logger log = Logger.getLogger(this.getClass());
+		Transaccion transaccion = TransaccionDao.load(monto);
+		TransaccionDto dto = new TransaccionDto();
+		
+		
+		
+		
+		
+	}
 }

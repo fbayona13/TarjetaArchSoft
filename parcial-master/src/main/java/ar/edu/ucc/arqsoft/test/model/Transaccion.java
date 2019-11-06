@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table (name= "TRANSACCION")
-public class Transaccion {
+public class Transaccion extends ObjetoGenerico {
 
 
 		@Column (name= "FECHA")

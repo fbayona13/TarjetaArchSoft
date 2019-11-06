@@ -25,5 +25,13 @@ public class TransaccionController {
 		return new ResponseEntity(dto, HttpStatus.CREATED);
 	}
 	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@RequestMapping(value = "/transaccion", method = RequestMethod.POST, produces = "application/json")
+	public ResponseEntity<?> GetTransaccionById(@RequestBody TransaccionDto dto) throws Exception {
+
+		transaccionService.GetTransaccionById(dto);
+
+		return new ResponseEntity(dto, HttpStatus.CREATED);
+	}
 	
 }

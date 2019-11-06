@@ -11,18 +11,21 @@ public class TransaccionDto {
 	private Long monto;
 	private Debito debito;
 	private Tarjeta tarjeta;
+	private Long id;
 	
 	
 	
 	public TransaccionDto() {
 		
 	}
-	public TransaccionDto(Date dt, Long  mt, Debito db, Tarjeta tr) {
+	public TransaccionDto(Date dt, Long  mt, Debito db, Tarjeta tr, long id) {
 		super();
 		this.date= dt;
 		this.debito= db;
 		this.monto= mt;
 		this.tarjeta= tr;
+		this.id = id;
+		
 		
 		
 	}
@@ -53,6 +56,13 @@ public class TransaccionDto {
 	public void setTarjeta(Tarjeta tarjeta) {
 		this.tarjeta = tarjeta;
 	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
 	
 	
 	
