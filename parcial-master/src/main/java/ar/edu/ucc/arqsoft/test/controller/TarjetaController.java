@@ -11,53 +11,38 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ar.edu.ucc.arqsoft.test.dto.TransaccionDto;
 
 @Controller
-public class TransaccionController {
+public class TarjetaController {
 	
-	@Autowired 
-	TransaccionController transaccionService;
-	
-	//Carga de saldo a la tarjeta
+	@Autowired
+	TarjetaController tarjetaService;
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@RequestMapping(value = "/transaccion", method = RequestMethod.POST, produces = "application/json")
-	public ResponseEntity<?> addTransaccion(@RequestBody TransaccionDto dto) throws Exception {
+	public ResponseEntity<?> mostrarSaldo(@RequestBody TransaccionDto dto) throws Exception {
 
-		transaccionService.addTransaccion(dto);
+		tarjetaService.mostrarSaldo(dto);
 
 		return new ResponseEntity(dto, HttpStatus.CREATED);
 	}
 	
-	// Realiza una busqueda del monto de la tarjeta, si el monto es menor da RECHADA, si el monto mayor OK
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@RequestMapping(value = "/transaccion", method = RequestMethod.POST, produces = "application/json")
-	public ResponseEntity<?> PedidoUtilizacion(@RequestBody TransaccionDto dto) throws Exception {
+	public ResponseEntity<?> cargaSaldo(@RequestBody TransaccionDto dto) throws Exception {
 
-		transaccionService.PedidoUtilizacion(dto);
+		tarjetaService.cargaSaldo(dto);
 
 		return new ResponseEntity(dto, HttpStatus.CREATED);
 	}
 	
-	
-	//Busqueda de transacciones por ID
-	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@RequestMapping(value = "/transaccion", method = RequestMethod.POST, produces = "application/json")
-	public ResponseEntity<?> GetTransaccionById(@RequestBody TransaccionDto dto) throws Exception {
+	public ResponseEntity<?> altaTarjeta(@RequestBody TransaccionDto dto) throws Exception {
 
-		transaccionService.GetTransaccionById(dto);
+		tarjetaService.altaTarjeta(dto);
 
 		return new ResponseEntity(dto, HttpStatus.CREATED);
 	}
-	
-	//Devuelve todas las transacciones por ID
-	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	@RequestMapping(value = "/transaccion", method = RequestMethod.POST, produces = "application/json")
-	public ResponseEntity<?> getAll(@RequestBody TransaccionDto dto) throws Exception {
 
-		transaccionService.getAll(dto);
 
-		return new ResponseEntity(dto, HttpStatus.CREATED);
-	}
-	
+
 }
