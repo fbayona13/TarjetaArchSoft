@@ -31,6 +31,7 @@ public class tarjetaService {
 		
 	}
 	
+	// verifica que el usuario no exista antes de darle el alta a la tarjeta
 	public void altaTarjeta (TarjetaDto dto) {
 		Tarjeta tarjeta = TarjetaDao.load(dto.getUsuario());
 		

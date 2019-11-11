@@ -36,6 +36,7 @@ public class transaccionService extends tarjetaService {
 		log.info("se cargo la transaccion");
 	}
 	
+	//pedido de utilizacion por un monto xx
 	public void PedidoUtilizacion (tarjetaService ser) {
 		TarjetaDto dto2 = new TarjetaDto();
 		
@@ -49,6 +50,7 @@ public class transaccionService extends tarjetaService {
 		}
 		
 	}
+	
 		
 	public TransaccionDto GetTransaccionById (Long id) {
 		Transaccion transaccion = TransaccionDao.load(id);
@@ -63,6 +65,7 @@ public class transaccionService extends tarjetaService {
 		
 	}
 	
+	// obtiene todos las transacciones por ID
 	public List <TransaccionDto> getAll(){
 		List <Transaccion> transaccions;
 		transaccions = TransaccionDao.getAll();
