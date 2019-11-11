@@ -17,30 +17,30 @@ public class TarjetaController {
 	TarjetaController tarjetaService;
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	@RequestMapping(value = "/transaccion", method = RequestMethod.POST, produces = "application/json")
+	@RequestMapping(value = "/mostrarSaldo", method = RequestMethod.POST, produces = "application/json")
 	public ResponseEntity<?> mostrarSaldo(@RequestBody TransaccionDto dto) throws Exception {
 
 		tarjetaService.mostrarSaldo(dto);
 
-		return new ResponseEntity(dto, HttpStatus.CREATED);
+		return new ResponseEntity(dto, HttpStatus.OK);
 	}
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	@RequestMapping(value = "/transaccion", method = RequestMethod.POST, produces = "application/json")
+	@RequestMapping(value = "/cargaSaldo", method = RequestMethod.POST, produces = "application/json")
 	public ResponseEntity<?> cargaSaldo(@RequestBody TransaccionDto dto) throws Exception {
 
 		tarjetaService.cargaSaldo(dto);
 
-		return new ResponseEntity(dto, HttpStatus.CREATED);
+		return new ResponseEntity(dto, HttpStatus.OK);
 	}
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	@RequestMapping(value = "/transaccion", method = RequestMethod.POST, produces = "application/json")
+	@RequestMapping(value = "/altaTarjeta", method = RequestMethod.POST, produces = "application/json")
 	public ResponseEntity<?> altaTarjeta(@RequestBody TransaccionDto dto) throws Exception {
 
 		tarjetaService.altaTarjeta(dto);
 
-		return new ResponseEntity(dto, HttpStatus.CREATED);
+		return new ResponseEntity(dto, HttpStatus.OK);
 	}
 
 
