@@ -52,7 +52,7 @@ public class TransaccionController {
 	//Devuelve todas las transacciones por ID
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	@RequestMapping(value = "/All", method = RequestMethod.POST, produces = "application/json")
+	@RequestMapping(value = "/All", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<?> getAll(@RequestBody TransaccionDto dto) throws Exception {
 
 		transaccionService.getAll(dto);

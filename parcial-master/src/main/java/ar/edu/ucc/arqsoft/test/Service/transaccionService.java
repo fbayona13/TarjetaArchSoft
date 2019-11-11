@@ -33,10 +33,11 @@ public class transaccionService extends tarjetaService {
 		
 		TransaccionDao.saveOrUpdate(transaccion);
 		
-		log.info("se cargo la transaccion");
+		log.info("SE CARGO LA TRANSACCION");
 	}
 	
 	//pedido de utilizacion por un monto xx
+	
 	public void PedidoUtilizacion (tarjetaService ser) {
 		TarjetaDto dto2 = new TarjetaDto();
 		
